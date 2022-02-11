@@ -4,11 +4,11 @@ import "./App.css";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Login from "./components/Login";
-import {getUserAuth} from "./actions"
+import { getUserAuth } from "./actions"
 import { connect } from "react-redux";
 
 function App(props) {
-  useEffect(()=>{
+  useEffect(() => {
     props.getUserAuth();
   }, []);
   return (
@@ -29,11 +29,11 @@ function App(props) {
 }
 
 const mapStateToProps = (state) => {
-  return{};
+  return {};
 }
 
-const mapDispatchToProps = (dispatch)=> ({
+const mapDispatchToProps = (dispatch) => ({
   getUserAuth: () => dispatch(getUserAuth()),
 });
 
-export default connect(mapStateToProps,mapDispatchToProps) (App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

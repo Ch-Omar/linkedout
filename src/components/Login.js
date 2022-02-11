@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import { signInAPI } from "../actions/index";
 import { Redirect } from "react-router";
 
@@ -7,7 +7,7 @@ const Login = (props) => {
   return (
     <Container>
       {
-        props.user && 
+        props.user &&
         <Redirect to="/home" />
       }
       <Nav>
@@ -25,7 +25,7 @@ const Login = (props) => {
           <img src="/images/login-hero.svg" alt="" />
         </Hero>
         <Form>
-          <Google onClick={()=> props.signIn()}>
+          <Google onClick={() => props.signIn()}>
             <img src="/images/google.svg" alt="" />
             Sign in with Google
           </Google>
@@ -183,4 +183,4 @@ const mapDispatchToProps = (dispatch) => ({
   signIn: () => dispatch(signInAPI()),
 })
 
-export default connect(mapStateToProps,mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
