@@ -22,8 +22,7 @@ export function signInAPI() {
         auth
             .signInWithPopup(provider)
             .then((payload) => {
-                console.log(payload.user);
-                //dispatch(setUser(payload.user));
+                dispatch(setUser(payload.user));
             })
             .catch((error) => alert(error.message));
     };
@@ -102,14 +101,12 @@ export function postArticleAPI(payload) {
 }
 
 export function getArticlesAPI() {
-    return (dispatch) => {
+    return async (dispatch) => {
         let payload;
-
-        db.collection("articles")
+        await db.collection("articles")
             .orderBy('actor.date', "desc")
             .onSnapshot((snapshot) => {
                 payload = snapshot.docs.map((doc) => doc.data());
-                console.log(payload);
                 dispatch(getArticles(payload));
             })
     }

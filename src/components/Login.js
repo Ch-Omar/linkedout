@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { signInAPI } from "../actions/index";
+import { signInAPI } from "../actions";
 import { Redirect } from "react-router";
 
 const Login = (props) => {

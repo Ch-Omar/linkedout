@@ -268,7 +268,7 @@ padding: 12px 24px;
     width: 100%;
     height: 35%;
     font-size: 16px;
-    margin - bottom: 20px;
+    margin-bottom: 20px;
 }
 `;
 
