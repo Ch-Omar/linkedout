@@ -69,7 +69,7 @@ export function postArticleAPI(payload) {
                     const downloadURL = await upload.snapshot.ref.getDownloadURL();
                     db.collection("articles").add({
                         actor: {
-                            discription: payload.user.email,
+                            description: payload.user.email,
                             title: payload.user.displayName,
                             date: payload.timestamp,
                             image: payload.user.photoURL,
@@ -85,7 +85,7 @@ export function postArticleAPI(payload) {
         } else if (payload.video) {
             db.collection("articles").add({
                 actor: {
-                    discription: payload.user.email,
+                    description: payload.user.email,
                     title: payload.user.displayName,
                     date: payload.timestamp,
                     image: payload.user.photoURL,
@@ -107,7 +107,7 @@ export function getArticlesAPI() {
             .orderBy('actor.date', "desc")
             .onSnapshot((snapshot) => {
                 payload = snapshot.docs.map((doc) => doc.data());
-                dispatch(getArticles(payload));
-            })
+            });
+        dispatch(getArticles(payload));
     }
 }
