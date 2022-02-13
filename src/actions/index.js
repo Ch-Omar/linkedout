@@ -101,13 +101,13 @@ export function postArticleAPI(payload) {
 }
 
 export function getArticlesAPI() {
-    return async (dispatch) => {
+    return (dispatch) => {
         let payload;
-        await db.collection("articles")
+        db.collection("articles")
             .orderBy('actor.date', "desc")
             .onSnapshot((snapshot) => {
-                payload = snapshot.docs.map((doc) => doc.data());
+                payload = snapshot.docs.map(doc => doc.data());
+                dispatch(getArticles(payload));
             });
-        dispatch(getArticles(payload));
     }
 }

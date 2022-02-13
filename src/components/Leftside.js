@@ -9,7 +9,7 @@ const Leftside = (props) => {
           <CardBackground />
           <a>
             <Photo />
-            <Link>Welcome, {props.user ? props.user.displayName : "there" } !</Link>
+            <Link>Welcome, {props.user ? props.user.displayName : "there"} !</Link>
           </a>
           <a>
             <AddPhotoText>Add a photo</AddPhotoText>
@@ -86,7 +86,7 @@ const CardBackground = styled.div`
 
 const Photo = styled.div`
   box-shadow: none;
-  background-image: url("/images/photo.svg");
+  background-image: url("/images/photo.svg");  
   width: 72px;
   height: 72px;
   box-sizing: border-box;
@@ -206,9 +206,9 @@ const CommunityCard = styled(ArtCard)`
   }
 `;
 
-const mapStateToProps =(state)=> {
+const mapStateToProps = (state) => {
   return {
-    user : state.user
+    user: state.userState.user
   };
 };
 

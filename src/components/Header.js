@@ -8,7 +8,7 @@ const Header = (props) => {
       <Content>
         <Logo>
           <a href="/home">
-            <img src="/images/home-logo.svg" alt="" />
+            <img src="/images/home-logo1.svg" alt="" />
           </a>
         </Logo>
         <Search>
@@ -59,13 +59,13 @@ const Header = (props) => {
             <User>
               <a>
                 {props.user && props.user.photoURL ?
-                <img src={props.user.photoURL} alt=""/> :
+                  <img src={props.user.photoURL} alt="" /> :
                   <img src="/images/user.svg" alt="" />}
                 <span>Me</span>
                 <img src="/images/down-icon.svg" alt="" />
               </a>
 
-              <SignOut onClick={()=>props.signOut()}>
+              <SignOut onClick={() => props.signOut()}>
                 <a>Sign Out</a>
               </SignOut>
             </User>
@@ -106,8 +106,9 @@ const Content = styled.div`
 `;
 
 const Logo = styled.span`
-  margin-right: 8px;
-  font-size: 0px;
+  margin-right: 5px;
+  width: 37px;
+  min-width: 37px;
 `;
 
 const Search = styled.div`
@@ -262,13 +263,13 @@ const Work = styled(User)`
 `;
 
 
-const mapStateToProps =(state)=>{
-  return{
-    user: state.user,
+const mapStateToProps = (state) => {
+  return {
+    user: state.userState.user,
   };
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  signOut : () =>dispatch(signOutAPI()),
+  signOut: () => dispatch(signOutAPI()),
 });
-export default connect(mapStateToProps,mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

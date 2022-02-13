@@ -8,14 +8,13 @@ import ReactPlayer from "react-player";
 
 const Main = (props) => {
   const [showModal, setShowModal] = useState("close");
-  const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     props.getArticles();
-    db.collection('articles').onSnapshot(snapshot => {
-      //console.log(setArticles(snapshot.docs.map(doc => doc.data().articles)))
-      setArticles(snapshot.docs.map(doc => doc.data()))
-    })
+    console.log(props);
+    // db.collection('articles').orderBy('actor.date', "desc").onSnapshot(snapshot => {
+    //   setArticles(snapshot.docs.map(doc => doc.data()))
+    // })
   }, []);
 
   const handleClick = (e) => {
@@ -31,7 +30,7 @@ const Main = (props) => {
   };
   return (
     <>{
-      articles.length === 0 ?
+      props.articles.length === 0 ?
         <p> There are no articles</p> :
         <Container>
           <ShareBox>
@@ -66,8 +65,8 @@ const Main = (props) => {
           <Content>
             {props.loading && <img src="./images/spin.svg" alt="" />}
             {
-              articles.length &&
-              articles.map((article, key) => (
+              props.articles.length &&
+              props.articles.map((article, key) => (
                 <Article key={key}>
                   <SharedActor>
                     <a>
@@ -332,13 +331,12 @@ const Content = styled.div`
 }
       `;
 
-const mapStateToProps = (state) => {
-  console.log(state);
-  return ({
-    user: state.user,
-    loading: state.loading,
-    articles: state.articles,
-  })
+const mapStateToProps = state => {
+  return {
+    user: state.userState.user,
+    loading: state.articleState.loading,
+    articles: state.articleState.articles,
+  }
 }
 
 const mapDispatchToProps = (dispatch) => ({

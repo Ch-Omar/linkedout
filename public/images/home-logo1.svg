@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="11.533 19.037 36.759 37.069" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <style bx:fonts="Audiowide">@import url(https://fonts.googleapis.com/css2?family=Audiowide%3Aital%2Cwght%400%2C400&amp;display=swap);</style>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 233.000019, 333.582463)">
+    <path d="M -185.751 -310.538 L -185.751 -281.538 C -185.751 -280.157 -186.87 -279.038 -188.251 -279.038 L -217.251 -279.038 C -218.632 -279.038 -219.751 -280.157 -219.751 -281.538 L -219.751 -310.538 C -219.751 -311.919 -218.632 -313.038 -217.251 -313.038 L -188.251 -313.038 C -186.87 -313.038 -185.751 -311.919 -185.751 -310.538 Z" style="fill: red; stroke: rgb(255, 0, 0);"/>
+    <text style="fill: rgb(255, 255, 255); font-family: Audiowide; font-size: 14.9px; paint-order: fill; stroke: rgb(255, 255, 255); white-space: pre;" x="-218.809" y="-291.434">Out</text>
+  </g>
+</svg>

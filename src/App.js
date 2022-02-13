@@ -4,13 +4,12 @@ import "./App.css";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Login from "./components/Login";
-import { getArticlesAPI, getUserAuth } from "./actions"
+import { getUserAuth } from "./actions"
 import { connect } from "react-redux";
 
 function App(props) {
   useEffect(() => {
     props.getUserAuth();
-    props.getArticles();
   }, []);
   return (
     <div className="App">
@@ -29,13 +28,10 @@ function App(props) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {};
-}
+const mapStateToProps = (state) => { };
 
 const mapDispatchToProps = (dispatch) => ({
   getUserAuth: () => dispatch(getUserAuth()),
-  getArticles: () => dispatch(getArticlesAPI())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

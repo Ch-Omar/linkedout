@@ -12,7 +12,7 @@ const Login = (props) => {
       }
       <Nav>
         <a href="/">
-          <img src="/images/login-logo.svg" alt="" />
+          <img width={"130%"} src="/images/linkedout.jpg" alt="" />
         </a>
         <div>
           <Join>Join now</Join>
@@ -175,7 +175,7 @@ const Google = styled.button`
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user,
+    user: state.userState.user,
   };
 };
 
