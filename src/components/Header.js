@@ -8,7 +8,7 @@ const Header = (props) => {
       <Content>
         <Logo>
           <a href="/home">
-            <img src="/images/home-logo1.svg" alt="" />
+            <img src="/images/home-logo.svg" alt="" />
           </a>
         </Logo>
         <Search>

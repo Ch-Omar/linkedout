@@ -30,9 +30,6 @@ const Home = (props) => {
 const Container = styled.div`
   padding-top: 52px;
   max-width: 100%;
-`;
-
-const Content = styled.div`
   max-width: 1128px;
   margin-left: auto;
   margin-right: auto;

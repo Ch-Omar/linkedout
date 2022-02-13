@@ -3,7 +3,6 @@ import PostModal from "./PostModal";
 import { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { getArticlesAPI } from "../actions";
-import db from "../firebase";
 import ReactPlayer from "react-player";
 
 const Main = (props) => {
@@ -11,10 +10,6 @@ const Main = (props) => {
 
   useEffect(() => {
     props.getArticles();
-    console.log(props);
-    // db.collection('articles').orderBy('actor.date', "desc").onSnapshot(snapshot => {
-    //   setArticles(snapshot.docs.map(doc => doc.data()))
-    // })
   }, []);
 
   const handleClick = (e) => {
@@ -73,7 +68,7 @@ const Main = (props) => {
                       <img src={article.actor.image} alt="" />
                       <div>
                         <span>{article.actor.title}</span>
-                        <span>{article.actor.discription}</span>
+                        <span>{article.actor.description}</span>
                         <span>{article.actor.date.toDate().toLocaleDateString()}</span>
                       </div>
                     </a>
@@ -102,9 +97,7 @@ const Main = (props) => {
                       </button>
                     </li>
                     <li>
-                      <a>
-                        2 comments
-                      </a>
+                      {article.comment} Comments
                     </li>
                   </SocialCounts>
                   <SocialActions>
@@ -195,12 +188,13 @@ const ShareBox = styled(CommonCard)`
       padding-bottom: 7px;
       button{
         img{
-        width: 52px;
-      height: 40px;
+        width: 45px;
+      height: 36px;
       margin: 0 4px 0 4px 2px;
         }
       span{
         color:#70b5f9;
+        font-size: 15px;
         }
       }
     }
