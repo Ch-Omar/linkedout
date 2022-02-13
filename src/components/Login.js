@@ -12,11 +12,11 @@ const Login = (props) => {
       }
       <Nav>
         <a href="/">
-          <img width={"130%"} src="/images/linkedout.jpg" alt="" />
+          <img width={"140%"} src="/images/linkedout.jpg" alt="" />
         </a>
         <div>
-          <Join>Join now</Join>
-          <SignIn>Sign in</SignIn>
+          <Join onClick={() => props.signIn()}>Join now</Join>
+          <SignIn onClick={() => props.signIn()}>Sign in</SignIn>
         </div>
       </Nav>
       <Section>
@@ -111,9 +111,10 @@ const Section = styled.section`
 `;
 
 const Hero = styled.div`
-  width: 100%;
+  width: 80%;
   h1 {
     padding-bottom: 0;
+    padding-left: 40px;
     width: 55%;
     font-size: 56px;
     color: #2977c9;
@@ -129,11 +130,12 @@ const Hero = styled.div`
 
   img {
      z-index: 1;
+     min-height: 450px;
     width: 700px;
     height: 670px;
     position: absolute;
-    bottom: -2px;
-    right: -150px;
+    bottom: 150px;
+    right: -10px;
     @media (max-width: 768px) {
       top: 230px;
       width: initial;
@@ -144,7 +146,9 @@ const Hero = styled.div`
 `;
 
 const Form = styled.div`
-  margin-top: 100px;
+padding-left: 20px;
+  display: flex;
+  position: absolute;
   width: 408px;
   @media (max-width: 768px) {
     margin-top: 20px;
@@ -155,6 +159,7 @@ const Google = styled.button`
   display: flex;
   justify-content: center;
   background-color: #fff;
+  position: absolute;
   align-items: center;
   height: 56px;
   width: 100%;
