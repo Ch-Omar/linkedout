@@ -327,7 +327,7 @@ const SocialActions = styled.div`
 const Content = styled.div`
       text-align:center;
 & > img{
-        width:30px;
+        width:50px;
 }
       `;
 

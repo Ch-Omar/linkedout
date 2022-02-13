@@ -282,7 +282,7 @@ const UploadImage = styled.div`
 
 const mapStateToProps = (state) => {
     return {
-        user: state.user,
+        user: state.userState.user,
     }
 };
 const mapDispatchToProps = (dispatch) => ({
