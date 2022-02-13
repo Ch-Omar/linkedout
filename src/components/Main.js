@@ -40,11 +40,11 @@ const Main = (props) => {
             </div>
             <div>
               <button>
-                <img src="/images/share-image.svg" alt="" />
+                <img onClick={handleClick} src="/images/share-image.svg" alt="" />
                 <span>Photo</span>
               </button>
               <button>
-                <img src="/images/share-video.svg" alt="" />
+                <img onClick={handleClick} src="/images/share-video.svg" alt="" />
                 <span>Video</span>
               </button>
               <button>

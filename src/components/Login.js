@@ -128,7 +128,7 @@ const Hero = styled.div`
   }
 
   img {
-    /* z-index: -1; */
+     z-index: 1;
     width: 700px;
     height: 670px;
     position: absolute;
@@ -158,12 +158,12 @@ const Google = styled.button`
   align-items: center;
   height: 56px;
   width: 100%;
+  z-index: 10;
   border-radius: 28px;
   box-shadow: inset 0 0 0 1px rgb(0 0 0 / 60%),
     inset 0 0 0 2px rgb(0 0 0 / 0%) inset 0 0 0 1px rgb(0 0 0 / 0);
 
   vertical-align: middle;
-  z-index: 0;
   transition-duration: 167ms;
   font-size: 20px;
   color: rgba(0, 0, 0, 0.6);
